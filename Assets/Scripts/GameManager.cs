@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public List<GameObject> targets;
     public Button restartButton;
     private float spawnRate = 1.0f;
-    private bool isGameActive = true;
-    // Start is called before the first frame update
-    void Start()
+    private bool isGameActive;
+   
+    public void StartGame(int difficulty)
     {
+        isGameActive = true;
+        spawnRate /= difficulty;
+        restartButton.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
