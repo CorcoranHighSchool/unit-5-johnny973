@@ -17,5 +17,5 @@ public class DifficultyButton : MonoBehaviour
         Debug.Log(gameObject.name + "was clicked");
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.StartGame(difficulty);
-    }
+    } 
 }
